@@ -92,9 +92,9 @@ def ecdsa_solver(curve, bit_bias, raw_msg_and_sigs, expected_pubkey = None):
     msg_1, (r_1, s_1) = msg_and_sigs[0]
     for possible_nonces in reduced:
         nonce_diff = possible_nonces[0]
-        nonce_part = mod_inv(r_n*s_1 - r_1*s_n, n) # precomputed since it's static
-        msg_part = s_n*msg_1 - s_1*m_n - s_1*s_n*nonce_diff
         # x = (r_n*s_1 - r_1*s_n)^-1 * (s_n*m_1 - s_1*m_n - s_1*s_n(k_1-k_n))
+        nonce_part = mod_inv(r_n*s_1 - r_1*s_n, n)
+        msg_part = s_n*msg_1 - s_1*m_n - s_1*s_n*nonce_diff
         privkey = (nonce_part * msg_part) % n
 
         for expected_pubkey in expected_pubkeys:
