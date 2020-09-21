@@ -147,4 +147,22 @@ $ ldd --version
 ldd (Ubuntu GLIBC 2.27-3ubuntu1.2) 2.27
 
 https://github.com/Naetw/CTF-pwn-tips#predictable-rngrandom-number-generator
+
+https://github.com/skysider/pwndocker
+docker run -d \
+	--rm \
+	-h ${ctf_name} \
+	--name ${ctf_name} \
+	-v $(pwd)/${ctf_name}:/ctf/work \
+	-p 23946:23946 \
+	--cap-add=SYS_PTRACE \
+	skysider/pwndocker
+
+docker exec -it ${ctf_name} /bin/bash
+
+cp /glibc/2.27/64/lib/ld-2.27.so /tmp/ld-2.27.so
+patchelf --set-interpreter /tmp/ld-2.27.so ./test
+LD_PRELOAD=./libc.so.6 ./test
+
+p = process(["/path/to/ld.so", "./test"], env={"LD_PRELOAD":"/path/to/libc.so.6"})
 ```
