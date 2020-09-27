@@ -634,7 +634,7 @@ See my [GitHub repo for binaries, libc, etc](https://github.com/jakecraige/ctf/t
 
 ## Exploit Script
 
-```
+```python
 #!/usr/bin/env python3
 from pwn import *
 
