@@ -313,7 +313,7 @@ pointer because the first zero byte is output. Constructing the payload on the
 terminal and dumping into `hexdump` we can see this the bytes in printed in
 little endian.
 
-````
+```sh
 $ python3 -c 'print("A"*40+"B")' | ./name_tag-traceable | hexdump -C
 ...snip
 00000090  69 72 73 74 20 6e 61 6d  65 3f 20 0a 57 65 6c 63  |irst name? .Welc|
