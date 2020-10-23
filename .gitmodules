@@ -1,0 +1,3 @@
+[submodule "tools/AutoRecon"]
+	path = tools/AutoRecon
+	url = https://github.com/Tib3rius/AutoRecon.git
