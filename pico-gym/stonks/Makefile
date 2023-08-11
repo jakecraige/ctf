@@ -1,0 +1,2 @@
+build:
+	gcc vuln.c

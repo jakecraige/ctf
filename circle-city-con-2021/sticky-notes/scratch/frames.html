@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <p>Example page demostrating iframe behavior given the same HTML content but
+    served with a different Content-Type header set.<p>
+    <div>
+      Content-Type: text/plain, it renders within a &lt;pre /&gt;<br />
+      <iframe src="http://localhost:3101/plain-content-type" width=1000 height=200></iframe>
+    </div>
+    <div>
+      Content-Type: text/html, it renders fine<br />
+      <iframe src="http://localhost:3101/html-content-type" width=1000></iframe>
+    </div>
+  </body>
+</html>

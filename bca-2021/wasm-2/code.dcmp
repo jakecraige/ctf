@@ -1,0 +1,25 @@
+export memory memory(initial: 1, max: 0);
+
+data d_bjsxPKMH7ND3bPRe(offset: 1000) = 
+"bjsxPKMH|"7N\1bD\043b]PR\19e%\7f/;\17";
+
+function cmp(a:int, b:int):int {
+  var v2:int;
+  var v0:int;
+  var v1:int;
+  loop L_a {
+    if ((v2 + v0)[0]:ubyte != ((v2 + v1)[0]:ubyte ^ (v2 * 9 & 127)) & 
+        v2 != 27) {
+      return 0
+    }
+    v2 = v2 + 1;
+    if (eqz((v2 - 1 + v0)[0]:ubyte)) { return 1 }
+    continue L_a;
+  }
+  return 0;
+}
+
+export function checkFlag(a:int):int {
+  return cmp(a, 1000)
+}
+

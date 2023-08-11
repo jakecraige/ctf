@@ -5,3 +5,4 @@ core
 *.lock
 *.lock~
 *.rep
+node_modules
